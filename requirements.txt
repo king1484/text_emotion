@@ -1,3 +1,4 @@
 Flask==2.0.2
 text2emotion==0.0.5
+nltk==3.6.7
 gunicorn
