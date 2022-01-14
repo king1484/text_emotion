@@ -1,11 +1,12 @@
-from flask import Flask
+from flask import Flask,request
 from textblob import TextBlob
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def get():
-    return str(TextBlob("Hey its working").polarity)
+    data = request.form.get("text")
+    return str(TextBlob(data).polarity)
     
 
 if __name__ == "__main__":
